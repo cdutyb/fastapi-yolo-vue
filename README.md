@@ -1,4 +1,4 @@
-# 基于FastAPI、YOLOv11和Vue的GTAV交通检测功能页面
+# 基于FastAPI、YOLOv11和Vue的GTAV交通检测功能页面（开发中）
 （包含注册登录功能）
 ## 后端(localhost:5000)
 1、安装docker\
