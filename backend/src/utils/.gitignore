@@ -1,0 +1,9 @@
+# 忽略所有文件
+*
+
+# 允许所有.py文件
+!*.py
+!*.md
+
+# 允许.gitignore文件本身
+!.gitignore

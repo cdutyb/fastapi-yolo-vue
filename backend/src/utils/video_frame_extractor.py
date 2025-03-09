@@ -55,8 +55,8 @@ def extract_frames(video_path, interval_seconds, output_dir):
 
 
 if __name__ == "__main__":
-    video_path = "E:/project_pycharm/AI/video.mp4"  # 视频文件路径
-    interval_seconds = 3  # 每 3 秒截取一帧
-    output_dir = "E:/datasets/train"  # 输出目录
+    video_path = "E:/project_pycharm/AI/video.mp4"  # 视频文件路径，根据需要更改
+    interval_seconds = 3  # 每 3 秒截取一帧，根据需要更改
+    output_dir = "E:/datasets/train"  # 输出目录，根据需要更改
 
     extract_frames(video_path, interval_seconds, output_dir)
