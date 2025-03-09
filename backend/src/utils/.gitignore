@@ -6,4 +6,4 @@
 
 # 允许.gitignore和.md文件
 !.gitignore
-!*.md
+!.md
