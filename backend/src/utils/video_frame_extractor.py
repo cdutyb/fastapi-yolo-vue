@@ -30,7 +30,7 @@ def extract_frames(video_path, interval_seconds, output_dir):
     os.makedirs(output_dir, exist_ok=True)
 
     frame_count = 0
-    saved_count = 0
+    saved_count = 0 #可修改文件名起始编号
 
     while True:
         ret, frame = cap.read()
