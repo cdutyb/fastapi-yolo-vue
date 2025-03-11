@@ -30,7 +30,7 @@ npm run dev
 ```
 前端启动完成
 ## YOLO
-使用YOLOv11\
-使用GTAV开源车辆检测数据集https://deepblue.lib.umich.edu/data/concern/data_sets/pv63g053w#items_display \
+使用YOLOv11: https://github.com/ultralytics/ultralytics \
+使用GTAV开源车辆检测数据集: https://deepblue.lib.umich.edu/data/concern/data_sets/pv63g053w#items_display \
 要研究代码和训练的话可以去找Ultralytics，这里就只放必要的代码和模型\
 另外在搜寻数据集和模型训练途中用过一些工具，保存在utils文件夹中
