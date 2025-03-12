@@ -33,7 +33,7 @@ npm run dev
 ## YOLO
 使用YOLOv11: https://github.com/ultralytics/ultralytics \
 要研究代码和训练的话可以去Ultralytics，这里就只放必要的代码和模型\
-另外在搜寻数据集和模型训练途中用过一些工具，保存在utils文件夹中\
+另外在搜寻数据集和模型训练途中用过一些工具，保存在utils文件夹中
 ### 数据集
 FCAV Simulation Dataset官网: https://deepblue.lib.umich.edu/data/concern/data_sets/pv63g053w#items_display \
 有GTAV的10k、50k和200k数据集，类别只有car。200k数据集太大，老是下载出错，很可惜。所以只下了50k的，上传到飞桨AI Studio方便下载:https://aistudio.baidu.com/datasetdetail/320051  \
