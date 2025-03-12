@@ -1,4 +1,5 @@
-# 基于FastAPI、YOLOv11和Vue的检测功能页面（检测功能开发中）
+# 基于FastAPI、YOLOv11和Vue的检测功能页面
+### 放了yolov11x.pt，两个GTAV车辆的检测模型（200k、1002）
 （检测是主要的目的，其他是附带的，包含注册登录功能）
 ## 目前存在问题：
 1、登录后点击Home页，再点击click，会直接退出登录，并跳转到登录页
@@ -31,6 +32,14 @@ npm run dev
 前端启动完成
 ## YOLO
 使用YOLOv11: https://github.com/ultralytics/ultralytics \
-使用GTAV开源车辆检测数据集: https://deepblue.lib.umich.edu/data/concern/data_sets/pv63g053w#items_display \
-要研究代码和训练的话可以去找Ultralytics，这里就只放必要的代码和模型\
-另外在搜寻数据集和模型训练途中用过一些工具，保存在utils文件夹中
+要研究代码和训练的话可以去Ultralytics，这里就只放必要的代码和模型\
+另外在搜寻数据集和模型训练途中用过一些工具，保存在utils文件夹中\
+### 数据集
+FCAV Simulation Dataset官网: https://deepblue.lib.umich.edu/data/concern/data_sets/pv63g053w#items_display \
+有GTAV的10k、50k和100k数据集，类别只有car。100k数据集太大，上传到飞桨AI Studio方便下载:  \
+\
+一开始自己半自动加手动标注了1002张，类别有car, motorbike, truck, bus, van, pickup, plane, bird\
+数据集不大，有的类标的比较模糊，所以效果中等。上传到飞桨AI Studio: https://aistudio.baidu.com/datasetdetail/319974
+
+
+
