@@ -4,10 +4,10 @@ import matplotlib.pyplot as plt
 import os
 
 # 读取 CSV 文件（请确保路径正确）
-results = pd.read_csv('results.csv')
+results = pd.read_csv('charts_50k/results_50k.csv')
 
 # 创建保存图片的目录
-output_dir = 'charts'
+output_dir = 'charts_50k'
 os.makedirs(output_dir, exist_ok=True)
 
 # 设置支持中文字体
