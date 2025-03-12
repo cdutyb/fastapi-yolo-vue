@@ -1,6 +1,6 @@
-# 基于FastAPI、YOLOv11和Vue的检测功能页面
-### 放了xx模型
-（检测是主要的目的，其他是附带的，包含注册登录功能）
+# 基于FastAPI、YOLOv11和Vue的游戏画面检测识别功能网页
+### 现有xx模型
+（检测识别是主要的目的，其他是附带的，包含注册登录功能）
 ## 目前存在问题：
 1、登录后点击Home页，再点击click，会直接退出登录，并跳转到登录页
 
@@ -36,10 +36,9 @@ npm run dev
 另外在搜寻数据集和模型训练途中用过一些工具，保存在utils文件夹中\
 ### 数据集
 FCAV Simulation Dataset官网: https://deepblue.lib.umich.edu/data/concern/data_sets/pv63g053w#items_display \
-有GTAV的10k、50k和200k数据集，类别只有car。200k数据集太大，老是下载出错，很可惜。所以只下了50k的，上传到飞桨AI Studio方便下载:  \
+有GTAV的10k、50k和200k数据集，类别只有car。200k数据集太大，老是下载出错，很可惜。所以只下了50k的，上传到飞桨AI Studio方便下载:https://aistudio.baidu.com/datasetdetail/320051  \
+\
+50k数据集在utils文件夹中有相关训练数据指标。\
 \
 一开始自己半自动加手动标注了1002张，类别有car, motorbike, truck, bus, van, pickup, plane, bird\
 数据集不大，有的类标的比较模糊，效果中等。上传到飞桨AI Studio: https://aistudio.baidu.com/datasetdetail/319974
-
-
-
