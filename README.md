@@ -36,7 +36,7 @@ npm run dev
 另外在搜寻数据集和模型训练途中用过一些工具，保存在utils文件夹中\
 ### 数据集
 FCAV Simulation Dataset官网: https://deepblue.lib.umich.edu/data/concern/data_sets/pv63g053w#items_display \
-有GTAV的10k、50k和100k数据集，类别只有car。100k数据集太大，上传到飞桨AI Studio方便下载:  \
+有GTAV的10k、50k和200k数据集，类别只有car。200k数据集太大，上传到飞桨AI Studio方便下载:  \
 \
 一开始自己半自动加手动标注了1002张，类别有car, motorbike, truck, bus, van, pickup, plane, bird\
 数据集不大，有的类标的比较模糊，所以效果中等。上传到飞桨AI Studio: https://aistudio.baidu.com/datasetdetail/319974
