@@ -1,5 +1,5 @@
-# 基于FastAPI、YOLOv11和Vue的目标检测功能网页
-## 包括非docker分支，只使用cpu的docker分支，使用nvidia gpu(支持cpu)的docker分支，按需选择
+# 基于FastAPI、YOLOv11和Vue的目标检测功能网页（还没开发完）
+## 包括非docker分支（默认），只使用cpu的docker分支，使用nvidia gpu(支持cpu)的docker分支，按需选择
 ### 现有yolov11模型，gtav_car_50k模型
 （检测识别是主要的目的，其他是附带的，包含注册登录功能）
 ## 目前存在问题：
