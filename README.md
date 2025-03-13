@@ -27,7 +27,7 @@ docker-compose exec backend aerich upgrade
 ```
 cd frontend
 npm install
-npm run dev
+npm run serve
 ```
 前端启动完成
 ## YOLO
