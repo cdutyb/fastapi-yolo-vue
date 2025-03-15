@@ -27,8 +27,6 @@ cd frontend
 npm install
 npm run serve
 ```
-## 目前存在问题：
-1、登录后点击Home页，再点击click，会直接退出登录，并跳转到登录页
 ## 目标检测
 默认放了yolov11n.pt，gtav_car_50k.pt，调整步骤如下：
 1、模型放在backend/src/core/yolo/models/当中
