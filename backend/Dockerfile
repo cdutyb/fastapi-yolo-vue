@@ -1,4 +1,4 @@
-FROM python:3.11-buster
+FROM pytorch/pytorch:2.0.1-cuda11.7-cudnn8-runtime
 
 RUN mkdir app
 WORKDIR /app
