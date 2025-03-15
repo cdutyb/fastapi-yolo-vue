@@ -9,7 +9,7 @@ pip install -r backend/requirements.txt
 docker-compose up -d --build # 启动后端和数据库服务
 
 docker-compose exec backend aerich init -t src.core.database.config.TORTOISE_ORM # 初始化aerich
-docker-compose exec backend aerich init-db # 初始化数据库 生成migrations/models里的文件
+docker-compose exec backend aerich init-db # 初始化数据库 生成migrations/models里的文件 如果文件已存在 会报错 删除models文件夹即可
 ```
 后端启动完成\
 \
