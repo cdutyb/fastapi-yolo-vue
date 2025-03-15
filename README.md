@@ -8,9 +8,8 @@
 pip install -r backend/requirements.txt
 docker-compose up -d --build # 启动后端和数据库服务
 
-cd backend
-aerich init -t src.core.database.config.TORTOISE_ORM # 初始化aerich
-aerich init-db # 初始化数据库
+docker-compose exec backend aerich init -t src.core.database.config.TORTOISE_ORM # 初始化aerich
+docker-compose exec backend aerich init-db # 初始化数据库
 ```
 后端启动完成\
 \
