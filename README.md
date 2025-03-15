@@ -9,7 +9,7 @@ pip install -r backend/requirements.txt
 docker-compose up -d --build # 启动后端和数据库服务
 
 docker-compose exec backend aerich init -t src.core.database.config.TORTOISE_ORM # 初始化aerich
-docker-compose exec backend aerich init-db # 初始化数据库
+docker-compose exec backend aerich init-db # 初始化数据库 生成migrations/models里的文件
 ```
 后端启动完成\
 \
@@ -27,3 +27,25 @@ cd frontend
 npm install
 npm run serve
 ```
+## 目前存在问题：
+1、登录后点击Home页，再点击click，会直接退出登录，并跳转到登录页
+## 目标检测
+默认放了yolov11n.pt，gtav_car_50k.pt，调整步骤如下：
+1、模型放在backend/src/core/yolo/models/当中
+2、修改 代码
+```
+
+```
+\
+YOLOv11: https://github.com/ultralytics/ultralytics \
+在搜寻数据集和模型训练途中用过一些工具，保存在utils文件夹中
+### 数据集
+FCAV Simulation Dataset官网: https://deepblue.lib.umich.edu/data/concern/data_sets/pv63g053w#items_display \
+有GTAV的10k、50k和200k数据集，类别只有car。200k数据集太大，老是下载出错，所以只下了50k的，上传到飞桨AI Studio方便下载:https://aistudio.baidu.com/datasetdetail/320051  \
+\
+GTAV50k数据集在utils文件夹中有相关训练数据指标。\
+\
+一开始自己半自动加手动标注了1002张，类别有car, motorbike, truck, bus, van, pickup, plane, bird\
+数据集不大，有的类标的比较模糊，效果中等。上传到飞桨AI Studio: https://aistudio.baidu.com/datasetdetail/319974
+
+前后端架构参考：https://testdriven.io/blog/developing-a-single-page-app-with-fastapi-and-vuejs/
