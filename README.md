@@ -7,7 +7,7 @@
 ```
 pip install -r backend/requirements.txt
 
-docker pull pytorch/pytorch:2.0.1-cuda11.7-cudnn8-runtime # 该镜像较大，自动拉取可能因为网络问题失败，所以直接手动拉取官方镜像，需要科学上网
+docker pull pytorch/pytorch:2.0.1-cuda11.7-cudnn8-runtime # 该镜像较大，自动拉取可能因为网络问题失败，所以直接手动拉取官方镜像，可能需要科学上网
 
 docker-compose up -d --build # 启动后端和数据库服务
 
@@ -28,7 +28,7 @@ docker-compose exec backend aerich upgrade
 ```
 cd frontend
 npm install
-npm run serve # 或npm run build
+npm run serve
 ```
 ## 目标检测
 默认放了yolov11n.pt，gtav_car_50k.pt，调整步骤如下：\
