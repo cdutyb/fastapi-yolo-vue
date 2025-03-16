@@ -1,13 +1,13 @@
 # 基于FastAPI、YOLOv11和Vue的目标检测功能网页（还没开发完）
 （检测识别是主要的目的，其他是附带的，比如注册登录功能，只是为了课程作业加的）
 ## 后端
-1、安装docker。如果有英伟达显卡，确保Nvidia驱动和NVIDIA Container Toolkit安装好。镜像需要主机NVIDIA驱动兼容CUDA>=11.7，如果不支持，可以自己更改镜像。如果没有英伟达显卡，也支持cpu。\
+1、安装**docker**（最好用命令行安装，否则会默认安装到C盘）。如果有英伟达显卡，确保**Nvidia**驱动和**NVIDIA Container Toolkit**安装好。镜像需要主机NVIDIA驱动兼容CUDA>=11.7，如果不支持，可以向下更改镜像。如果没有英伟达显卡，也支持cpu。\
 2、启动docker\
 3、在终端（根目录）输入命令
 ```
 pip install -r backend/requirements.txt
 
-docker pull pytorch/pytorch:2.0.1-cuda11.7-cudnn8-runtime # 自动拉取可能因为网络问题失败，所以可以手动拉取官方镜像
+docker pull pytorch/pytorch:2.0.1-cuda11.7-cudnn8-runtime # 该镜像较大，自动拉取可能因为网络问题失败，所以直接手动拉取官方镜像，可能需要科学上网
 
 docker-compose up -d --build # 启动后端和数据库服务
 
@@ -23,7 +23,7 @@ docker-compose exec backend aerich upgrade
 ```
 ## 前端
 （如果8080端口被占用会递增至8081端口）\
-1、安装Node.js\
+1、安装**Node.js**\
 2、新开一个终端（根目录）输入命令
 ```
 cd frontend
@@ -31,8 +31,8 @@ npm install
 npm run serve
 ```
 ## 目标检测
-默认放了yolov11n.pt，gtav_car_50k.pt，调整步骤如下：
-1、模型放在backend/src/core/yolo/models/当中
+默认放了yolov11n.pt，gtav_car_50k.pt，调整步骤如下：\
+1、模型放在backend/src/core/yolo/models/当中\
 2、修改 代码
 ```
 
