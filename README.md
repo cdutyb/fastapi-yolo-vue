@@ -6,6 +6,9 @@
 3、在终端（根目录）输入命令
 ```
 pip install -r backend/requirements.txt
+
+docker pull pytorch/pytorch:2.0.1-cuda11.7-cudnn8-runtime # 自动拉取可能因为网络问题失败，所以可以手动拉取官方镜像
+
 docker-compose up -d --build # 启动后端和数据库服务
 
 docker-compose exec backend aerich init -t src.core.database.config.TORTOISE_ORM # 初始化aerich
