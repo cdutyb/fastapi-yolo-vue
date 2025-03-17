@@ -28,3 +28,16 @@ export default {
   padding-top: 5em;
 }
 </style>
+<style>
+body {
+  background: linear-gradient(180deg, #61d591, #913ee4);
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  min-height: 100vh;  /* 确保页面高度至少填满视口 */
+  background-size: cover;  /* 确保背景填满整个页面 */
+  background-attachment: fixed; /* 背景固定，滚动时背景不会跟随 */
+}
+
+</style>

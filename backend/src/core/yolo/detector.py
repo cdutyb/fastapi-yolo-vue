@@ -1,7 +1,6 @@
 import os
 import cv2
 import random
-import torch
 from typing import List
 from ultralytics.models import YOLO
 from pathlib import Path
@@ -11,19 +10,8 @@ class Detector:
     def __init__(self, model_path: str = "src/core/yolo/models/yolo11n.pt"):
         """初始化 YOLO 目标检测模型"""
         self.model_path = model_path
-        self.device = self._get_device()
         self.load_model()
         self.results = []
-
-    def _get_device(self) -> str:
-        """确定使用的设备类型"""
-        if torch.cuda.is_available():
-            device = "0"  # 或 "cuda:0"
-            print(f"使用GPU: {torch.cuda.get_device_name(0)}")
-        else:
-            device = "cpu"
-            print("GPU不可用，使用CPU")
-        return device
 
     def load_model(self):
         """加载 YOLO 模型"""
@@ -38,7 +26,7 @@ class Detector:
             os.makedirs(output_dir)
 
         self.results = self.model.predict(source=image_path,
-                                          device=self.device, save=False, imgsz=640, show=False, conf=conf_threshold)
+                                          device="0", save=False, imgsz=640, show=False, conf=conf_threshold)
         self.save_result(output_dir)
         return output_dir
 
@@ -78,7 +66,7 @@ class Detector:
             if not ret:
                 break
 
-            results = self.model.predict(frame, device=self.device, imgsz=640, conf=conf_threshold)
+            results = self.model.predict(frame, device="0", imgsz=640, conf=conf_threshold)
 
             for result in results:
                 for box in result.boxes:
@@ -105,10 +93,12 @@ class Detector:
 
     def change_model(self, new_model_path: str):
         """切换 YOLO 模型"""
-        if not os.path.exists(new_model_path):
+        pre_path = 'src/core/yolo/models/'
+        ful_path = pre_path + new_model_path
+        if not os.path.exists(ful_path):
             raise FileNotFoundError(f"模型文件不存在: {new_model_path}")
 
-        self.model_path = new_model_path
+        self.model_path = ful_path
         self.load_model()
 
     def save_result(self, output_dir: str = 'src/core/yolo/output/images'):
