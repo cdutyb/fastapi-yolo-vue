@@ -30,12 +30,16 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-# 创建输出目录（如果不存在）
-os.makedirs("src/core/yolo/output/images", exist_ok=True)
-os.makedirs("src/core/yolo/output/videos", exist_ok=True)
+# 获取绝对路径
+base_dir = os.path.dirname(os.path.abspath(__file__))  # 当前文件所在目录
+output_dir = os.path.join(base_dir, "core", "yolo", "output")
 
-# 将输出目录挂载为静态资源
-app.mount("/static/outputs", StaticFiles(directory="src/core/yolo/output"), name="static_outputs")
+# 创建输出目录
+os.makedirs(os.path.join(output_dir, "images"), exist_ok=True)
+os.makedirs(os.path.join(output_dir, "videos"), exist_ok=True)
+
+# 挂载静态资源(使用绝对路径)
+app.mount("/static/outputs", StaticFiles(directory=output_dir), name="static_outputs")
 
 app.include_router(users.router)
 app.include_router(yolo.router)

@@ -7,12 +7,12 @@
 ```
 pip install -r backend/requirements.txt
 
-docker pull cnstark/pytorch:2.3.1-py3.10.15-ubuntu22.04 # amd64cpu版本 https://github.com/cnstark/pytorch-docker?tab=readme-ov-file
+docker pull cnstark/pytorch:2.3.1-py3.10.15-ubuntu22.04 # amd64cpu版本，如果有不同的可以自己找适合的镜像，为了避免拉不下来就手动拉取了
 
-docker-compose up -d --build # 启动后端和数据库服务
+docker-compose up -d --build # 后台启动后端和数据库服务，如果要在前台启动可以去掉-d参数
 
 docker-compose exec backend aerich init -t src.core.database.config.TORTOISE_ORM # 初始化aerich
-docker-compose exec backend aerich init-db # 初始化数据库 生成migrations/models里的文件 如果文件已存在 会报错 删除models文件夹即可
+docker-compose exec backend aerich init-db # 初始化数据库 生成migrations/models里的文件 如果文件已存在的时候重复执行会报错 删除models文件夹即可
 ```
 后端启动完成\
 \
@@ -32,12 +32,8 @@ npm install
 npm run serve
 ```
 ## 目标检测
-默认放了yolov11n.pt，50k，50kplus.pt，调整步骤如下：\
-1、模型放在backend/src/core/yolo/models/当中\
-2、修改 代码
-```
-
-```
+默认放了yolov11n.pt，50k.pt，50kplus.pt，调整方法如下：\
+把模型放在backend/src/core/yolo/models/当中就可以了，会自动检测的。\
 \
 YOLOv11: https://github.com/ultralytics/ultralytics \
 在搜寻数据集和模型训练途中用过一些工具，保存在utils文件夹中
@@ -50,4 +46,5 @@ GTAV50k数据集在utils文件夹中有相关训练数据指标。50kplus是根�
 一开始自己半自动加手动标注了1002张，类别有car, motorbike, truck, bus, van, pickup, plane, bird\
 数据集不大，有的类标的比较模糊，效果中等。上传到飞桨AI Studio: https://aistudio.baidu.com/datasetdetail/319974
 
+用到的docker镜像的仓库：https://github.com/cnstark/pytorch-docker?tab=readme-ov-file \
 前后端架构参考：https://testdriven.io/blog/developing-a-single-page-app-with-fastapi-and-vuejs/

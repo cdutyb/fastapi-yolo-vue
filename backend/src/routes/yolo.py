@@ -22,30 +22,23 @@ async def detect_objects(
         save_dir = "src/core/yolo/uploads/images"
         os.makedirs(save_dir, exist_ok=True)
 
-        # 确保输出目录存在
-        output_dir = "static/outputs/images"
-        os.makedirs(output_dir, exist_ok=True)
-
         file_paths = []
-        output_filenames = []
-        for file in files:
+        for i, file in enumerate(files):  # 使用enumerate获取索引和值
             # 保存原始文件
             file_path = os.path.join(save_dir, file.filename)
             with open(file_path, "wb") as buffer:
                 shutil.copyfileobj(file.file, buffer)
             file_paths.append(file_path)
 
-            # 将对应的输出文件名添加到列表
-            output_filenames.append(file.filename)
-
         # 进行目标检测
         detector.detect(file_paths, conf_threshold)
 
-        # 直接返回与输入文件相对应的文件名
-        # 不依赖detector.detect的返回值
+        # 返回正确的处理后图片文件名（与detector.py中保存的格式匹配）
+        output_images = [f"image_{i}.jpg" for i in range(len(files))]
+
         return {
             "message": "检测完成",
-            "output_images": output_filenames
+            "output_images": output_images
         }
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
@@ -53,8 +46,8 @@ async def detect_objects(
 
 @router.post("/detect_video")
 async def detect_video(
-    file: UploadFile = File(...),
-    conf_threshold: float = Form(0.25)
+        file: UploadFile = File(...),
+        conf_threshold: float = Form(0.25)
 ):
     """视频目标检测 - 处理视频并返回结果视频文件名"""
     try:
@@ -67,12 +60,15 @@ async def detect_video(
             shutil.copyfileobj(file.file, buffer)
 
         # 处理视频目标检测
-        output_video_path = detector.detect_video(video_path, conf_threshold)
+        detector.detect_video(video_path, conf_threshold)
 
-        # 只返回文件名，不包含路径
+        # 从路径中提取正确的输出文件名
+        video_name = os.path.splitext(file.filename)[0]
+        output_video_filename = f"{video_name}_detected.mp4"
+
         return {
             "message": "视频检测完成",
-            "output_video": os.path.basename(output_video_path)
+            "output_video": output_video_filename
         }
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
