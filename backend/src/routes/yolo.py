@@ -7,7 +7,7 @@ from src.core.yolo.detector import Detector  # 导入你的YOLO检测类
 router = APIRouter(prefix="/yolo", tags=["yolo"])
 
 # 初始化 YOLO 目标检测器（默认模型路径）
-model_path = "src/core/yolo/models/50kplus.pt"
+model_path = "src/core/yolo/models/gtav_50kplus.pt"
 detector = Detector(model_path)
 
 

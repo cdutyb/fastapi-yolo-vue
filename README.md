@@ -31,7 +31,7 @@ npm install
 npm run serve
 ```
 ## 目标检测
-默认放了yolov11n.pt，50k.pt，50kplus.pt，调整方法如下：\
+默认放了一些pt模型，自定义方法如下：\
 把模型放在backend/src/core/yolo/models/当中就可以了，会自动检测的。\
 \
 YOLOv11: https://github.com/ultralytics/ultralytics \
