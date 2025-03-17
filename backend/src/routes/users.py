@@ -20,7 +20,7 @@ from src.core.auth.jwthandler import (
 
 
 # 创建一个 FastAPI 路由对象
-router = APIRouter()
+router = APIRouter(tags=["users"])
 
 
 # 定义一个 POST 请求处理函数，用于创建新用户
