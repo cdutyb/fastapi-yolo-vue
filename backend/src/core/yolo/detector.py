@@ -17,12 +17,7 @@ class Detector:
 
     def _get_device(self) -> str:
         """确定使用的设备类型"""
-        if torch.cuda.is_available():
-            device = "0"  # 或 "cuda:0"
-            print(f"使用GPU: {torch.cuda.get_device_name(0)}")
-        else:
-            device = "cpu"
-            print("GPU不可用，使用CPU")
+        device = "cpu"
         return device
 
     def load_model(self):
@@ -105,10 +100,12 @@ class Detector:
 
     def change_model(self, new_model_path: str):
         """切换 YOLO 模型"""
-        if not os.path.exists(new_model_path):
+        pre_path = 'src/core/yolo/models/'
+        ful_path = pre_path + new_model_path
+        if not os.path.exists(ful_path):
             raise FileNotFoundError(f"模型文件不存在: {new_model_path}")
 
-        self.model_path = new_model_path
+        self.model_path = ful_path
         self.load_model()
 
     def save_result(self, output_dir: str = 'src/core/yolo/output/images'):

@@ -1,5 +1,4 @@
-FROM pytorch/pytorch:2.0.1-cuda11.7-cudnn8-runtime
-#FROM python:3.11-buster
+FROM cnstark/pytorch:2.3.1-py3.10.15-ubuntu22.04
 
 RUN mkdir app
 WORKDIR /app
