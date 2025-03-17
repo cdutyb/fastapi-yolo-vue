@@ -1,7 +1,7 @@
 # 基于FastAPI、YOLOv11和Vue的目标检测功能网页（还没开发完）
 （检测识别是主要的目的，其他是附带的，比如注册登录功能，只是为了课程作业加的）
 ## 后端 (localhost:5000)
-1、安装**docker**（最好用命令行安装，否则会默认安装到C盘）。\
+1、安装**docker**（最好用命令行安装，否则会默认安装到C盘）\
 2、启动docker\
 3、在终端（根目录）输入命令
 ```
@@ -21,8 +21,6 @@ docker-compose exec backend aerich upgrade
 ```
 *如果出现了docker容器内生成的文件没有同步到宿主机上，可以检查宿主机某个User对挂载到容器的backend文件夹是否有修改权限\
 *后端的路径报错是正常的，代码写的是容器内的路径，在容器内可以运行就ok。
-#### 现存问题
-1、点击网页左上角LOGO或登录后Home的click按钮或刷新会登出跳转到登录页面
 ## 前端 (localhost:8080)
 （如果8080端口被占用会递增至8081端口）\
 1、安装**Node.js**\
@@ -49,3 +47,8 @@ GTAV50k数据集在utils文件夹中有相关训练数据指标。50kplus是根�
 
 用到的docker镜像的仓库：https://github.com/cnstark/pytorch-docker?tab=readme-ov-file \
 前后端架构参考：https://testdriven.io/blog/developing-a-single-page-app-with-fastapi-and-vuejs/
+
+## 待办
+1、点击网页左上角LOGO或登录后Home的click按钮或刷新会登出跳转到登录页面\
+2、检测进度条没做
+
