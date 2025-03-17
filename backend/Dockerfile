@@ -1,4 +1,4 @@
-FROM cnstark/pytorch:2.3.1-py3.10.15-ubuntu22.04
+FROM pytorch/pytorch:2.0.1-cuda11.7-cudnn8-runtime
 
 RUN mkdir app
 WORKDIR /app

@@ -17,7 +17,7 @@ class Detector:
 
     def _get_device(self) -> str:
         """确定使用的设备类型"""
-        device = "cpu"
+        device = "0"
         return device
 
     def load_model(self):
