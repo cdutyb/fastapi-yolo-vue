@@ -45,7 +45,6 @@ GTAV50k数据集在utils文件夹中有相关训练数据指标。50kplus是根�
 一开始自己半自动加手动标注了1002张，类别有car, motorbike, truck, bus, van, pickup, plane, bird\
 数据集不大，有的类标的比较模糊，效果中等。上传到飞桨AI Studio: https://aistudio.baidu.com/datasetdetail/319974
 
-用到的docker镜像的仓库：https://github.com/cnstark/pytorch-docker?tab=readme-ov-file \
 前后端架构参考：https://testdriven.io/blog/developing-a-single-page-app-with-fastapi-and-vuejs/
 
 ## 待办
