@@ -1,5 +1,6 @@
 # 基于FastAPI、YOLOv11和Vue的目标检测功能网页（cpu-only）（测试开发中）
-（检测识别是主要的目的，其他是附带的，比如注册登录功能，只是为了课程作业加的）
+（检测识别是主要的目的，其他是附带的，比如注册登录功能，只是为了课程作业加的）\
+**除了cpu-only，还有nvidia-gpu-only分支**
 ## 后端 (localhost:5000)
 1、安装**docker**（最好用命令行安装，否则会默认安装到C盘）\
 2、启动docker\
@@ -20,7 +21,8 @@ docker-compose exec backend aerich migrate
 docker-compose exec backend aerich upgrade
 ```
 *如果出现了docker容器内生成的文件没有同步到宿主机上，可以检查宿主机某个User对挂载到容器的backend文件夹是否有修改权限\
-*后端的路径报错是正常的，代码写的是容器内的路径，在容器内可以运行就ok。
+*后端的路径报错是正常的，代码写的是容器内的路径，在容器内可以运行就ok。\
+*视频编码现在使用vp09（detector.py内），其他的编码浏览器开发的时候播放不了。
 ## 前端 (localhost:8080)
 （如果8080端口被占用会递增至8081端口）\
 1、安装**Node.js**\
