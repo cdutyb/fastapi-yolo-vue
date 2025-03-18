@@ -1,7 +1,6 @@
 import os
 import cv2
 import random
-import torch
 from typing import List
 from ultralytics.models import YOLO
 from pathlib import Path
@@ -59,7 +58,7 @@ class Detector:
         fps = int(cap.get(cv2.CAP_PROP_FPS))
         width = int(cap.get(cv2.CAP_PROP_FRAME_WIDTH))
         height = int(cap.get(cv2.CAP_PROP_FRAME_HEIGHT))
-        fourcc = cv2.VideoWriter_fourcc(*'mp4v')
+        fourcc = cv2.VideoWriter_fourcc(*'vp09')
 
         video_name = Path(video_path).stem
         output_video_path = os.path.join(output_dir, f"{video_name}_detected.mp4")
