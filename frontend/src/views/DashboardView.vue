@@ -177,7 +177,7 @@ export default {
       const cleanBaseUrl = baseUrl.endsWith('/') ? baseUrl.slice(0, -1) : baseUrl;
       // 确保路径以斜杠开头
       const cleanPath = path.startsWith('/') ? path : `/${path}`;
-      return `${cleanBaseUrl}${cleanPath}/${filename}`;
+      return `${cleanBaseUrl}${cleanPath}/${filename}?t=${Date.now()}`;
     };
 
     onMounted(async () => {
@@ -228,6 +228,10 @@ export default {
       }
 
       try {
+        // 清空旧结果
+        resultImages.value = [];
+        originalImages.value = [];
+
         ElMessage.info('正在处理图片，请等候...');
 
         // 保存原始图片URL
@@ -240,9 +244,9 @@ export default {
 
         // 使用辅助函数构建URL，避免双斜杠问题
         const baseUrl = axios.defaults.baseURL || '';
-        resultImages.value = response.output_images.map(img =>
+        resultImages.value = [...response.output_images.map(img =>
           buildResourceUrl(baseUrl, 'static/outputs/images', img)
-        );
+        )];
 
         console.log('检测结果图片URLs:', resultImages.value); // 调试日志
         ElMessage.success('图片检测完成');
@@ -259,6 +263,8 @@ export default {
       }
 
       try {
+        resultVideo.value = '';
+        originalVideo.value = '';
         ElMessage.info('正在处理视频，这可能需要一些时间...');
 
         // 保存原始视频URL
@@ -270,6 +276,7 @@ export default {
 
         // 使用辅助函数构建视频URL，避免双斜杠问题
         const baseUrl = axios.defaults.baseURL || '';
+
         resultVideo.value = buildResourceUrl(baseUrl, 'static/outputs/videos', response.output_video);
 
         console.log('检测结果视频URL:', resultVideo.value); // 调试日志
