@@ -21,6 +21,7 @@ docker-compose exec backend aerich upgrade
 ```
 *如果出现了docker容器内生成的文件没有同步到宿主机上，可以检查宿主机某个User对挂载到容器的backend文件夹是否有修改权限\
 *后端的路径报错是正常的，代码写的是容器内的路径，在容器内可以运行就ok。
+*视频编码现在使用vp09（detector.py内），其他的编码浏览器开发的时候播放不了。
 ## 前端 (localhost:8080)
 （如果8080端口被占用会递增至8081端口）\
 1、安装**Node.js**\
