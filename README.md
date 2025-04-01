@@ -1,4 +1,4 @@
-# 基于FastAPI、YOLOv11和Vue的目标检测功能网页（cpu-only）（测试开发中）
+# 基于FastAPI、YOLOv11和Vue的目标检测功能网页（cpu-only）（搁置了）
 （检测识别是主要的目的，其他是附带的，比如注册登录功能，只是为了课程作业加的）\
 **除了cpu-only，还有nvidia-gpu-only分支**
 ## 后端 (localhost:5000)
