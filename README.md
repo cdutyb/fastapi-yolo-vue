@@ -1,4 +1,4 @@
-# 基于FastAPI、YOLOv11和Vue的目标检测功能网页（cpu-only）（搁置了）
+# 基于FastAPI、YOLOv11和Vue的目标检测功能网页（cpu-only）
 （检测识别是主要的目的，其他是附带的，比如注册登录功能，只是为了课程作业加的）\
 **除了cpu-only，还有nvidia-gpu-only分支**
 ## 后端 (localhost:5000)
@@ -50,6 +50,6 @@ GTAV50k数据集在utils文件夹中有相关训练数据指标。50kplus是根�
 用到的docker镜像的仓库：https://github.com/cnstark/pytorch-docker?tab=readme-ov-file \
 前后端架构参考：https://testdriven.io/blog/developing-a-single-page-app-with-fastapi-and-vuejs/
 
-## 待办
+## 没做的
 1、点击网页左上角LOGO或登录后Home的click按钮或刷新会登出跳转到登录页面\
 2、检测进度条没做
