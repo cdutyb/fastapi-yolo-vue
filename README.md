@@ -1,4 +1,4 @@
-# 基于FastAPI、YOLOv11和Vue的目标检测功能网页（nvidia-gpu-only）（测试开发中）
+# 基于FastAPI、YOLOv11和Vue的目标检测功能网页（nvidia-gpu-only）
 （检测识别是主要的目的，其他是附带的，比如注册登录功能，只是为了课程作业加的）
 ## 后端 (localhost:5000)
 1、安装**docker**（最好用命令行安装，否则会默认安装到C盘），如果有英伟达显卡，确保**NVIDIA驱动**和**NVIDIA Container Toolkit**安装好。镜像需要主机NVIDIA驱动兼容CUDA>=11.7，如果不支持，可以向下更改镜像。\
@@ -49,5 +49,6 @@ GTAV50k数据集在utils文件夹中有相关训练数据指标。50kplus是根�
 前后端架构参考：https://testdriven.io/blog/developing-a-single-page-app-with-fastapi-and-vuejs/
 
 ## 待办
-1、点击网页左上角LOGO或登录后Home的click按钮或刷新会登出跳转到登录页面
-2、检测进度条没做
+1、点击网页左上角LOGO或登录后Home的click按钮或刷新会登出跳转到登录页面\
+2、登录注册系统有点问题\
+3、检测进度条没做
