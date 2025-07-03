@@ -50,7 +50,8 @@ GTAV50k数据集在utils文件夹中有相关训练数据指标。50kplus是根�
 用到的docker镜像的仓库：https://github.com/cnstark/pytorch-docker?tab=readme-ov-file \
 前后端架构参考：https://testdriven.io/blog/developing-a-single-page-app-with-fastapi-and-vuejs/
 
-## 没做的！
+## 改进
 1、点击网页左上角LOGO或登录后Home的click按钮或刷新会登出跳转到登录页面\
 2、登录注册系统有点问题\
 3、检测进度条没做
+4、目前的代码结构可以改进
